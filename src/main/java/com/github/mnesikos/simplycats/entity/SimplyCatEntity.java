@@ -1,5 +1,6 @@
 package com.github.mnesikos.simplycats.entity;
 
+import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 import com.github.mnesikos.simplycats.SCReference;
 import com.github.mnesikos.simplycats.SimplyCats;
 import com.github.mnesikos.simplycats.configuration.SCConfig;
@@ -104,6 +105,7 @@ public class SimplyCatEntity extends TamableAnimal {
         this.goalSelector.addGoal(3, new SCRelaxOnOwnerGoal(this));
         this.goalSelector.addGoal(4, temptGoal);
         this.goalSelector.addGoal(5, new SCLieOnBedGoal(this, 1.1D, 8));
+        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0D, 10.0F, 5.0F, false));
         this.goalSelector.addGoal(6, new CatFollowParentGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new CatBirthGoal(this));
         this.goalSelector.addGoal(7, new SCSitOnBlockGoal(this, 0.8D, 8));
